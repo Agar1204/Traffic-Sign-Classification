@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: traffic.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/traffic.py", 
+            "console": "integratedTerminal",
+            "args": [
+                "gtrsb" 
+            ],
+            "justMyCode": true 
+        }
+    ]
+}
