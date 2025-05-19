@@ -3,7 +3,6 @@ import numpy as np
 import os
 import sys
 import tensorflow as tf
-import keras
 
 from sklearn.model_selection import train_test_split
 
@@ -16,8 +15,8 @@ TEST_SIZE = 0.4
 
 def main():
     # Check command-line arguments
-    if len(sys.argv) not in [2, 3]:
-        sys.exit("Usage: python traffic.py data_directory [model.h5]")
+    if len(sys.argv) != 2:
+        sys.exit("Usage: python traffic.py data_directory")
 
     # Get image arrays and labels for all image files
     images, labels = load_data(sys.argv[1])
@@ -41,11 +40,8 @@ def main():
     # Evaluate CNNs performance against the test set
     model.evaluate(x_test,  y_test, verbose=2)
 
-    # Save model to file (if filename is specified)
-    if len(sys.argv) == 3:
-        filename = sys.argv[2]
-        model.save(filename)
-        print(f"Model saved to {filename}.")
+    # Save model to file 
+    model.save("trained_model.keras")
 
 
 def load_data(data_dir):
@@ -109,7 +105,6 @@ def get_model():
         tf.keras.layers.Dense(NUM_CATEGORIES, activation="softmax")
         ])
     return model
-
 
 # Only run code if script is run directly, not imported. 
 if __name__ == "__main__":

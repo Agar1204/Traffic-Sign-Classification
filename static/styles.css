@@ -1,0 +1,33 @@
+h1{
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    height: 7vh;
+}
+
+.upload{
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.submit{
+    background-color: rgb(10, 102, 194);
+    cursor: pointer;
+    color: white;
+    width: 230px;
+    height: 35px;
+    border-radius:20px;
+    border-color: rgb(10, 102, 194);
+    border-style: solid;
+    font-weight: bold;
+    font-size: 14px;
+}
+p{
+    font-size: 18px;
+
+}

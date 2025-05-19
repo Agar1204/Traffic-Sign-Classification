@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Sign Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+</head>
+<body>
+
+    <h1> Traffic Sign Classifier</h1>
+    <div class = "container">
+        <div class="upload">
+        <form method="post" enctype="multipart/form-data" action="/upload">
+            <input type="file" name="file" accept="image/*"> 
+            <input type="submit" value="Predict Image">
+        </form>
+
+        {% if prediction %}
+        <p> Prediction: {{prediction}} sign</p>
+        {% endif %}
+        </div>
+    </div>  
+</body>
+</html>
