@@ -13,12 +13,14 @@
         <div class="upload">
         <form method="post" enctype="multipart/form-data" action="/upload">
             <input type="file" name="file" accept="image/*"> 
-            <input type="submit" value="Predict Image">
+            <input class = "submit" type="submit" value="Predict Image">
         </form>
 
         {% if prediction %}
         <p> Prediction: {{prediction}} sign</p>
         {% endif %}
+
+        <img src="{{image}}" class = "image"> </img>
         </div>
     </div>  
 </body>

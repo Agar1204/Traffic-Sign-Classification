@@ -1,6 +1,6 @@
 import tensorflow as tf
 import cv2
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, url_for
 import os
 import numpy as np
 
@@ -68,10 +68,9 @@ def predict():
     predictions = model.predict(np.array([img]))
     predicted_class_index = np.argmax(predictions[0]) # Gets the largest class probability
     class_prediction = CLASS_NAMES[str(int(predicted_class_index))]
+    image_url = url_for('static', filename=image_file.filename)
 
-
-    
-    return render_template("index.html", prediction=class_prediction)
+    return render_template("index.html", prediction=class_prediction, image = image_url)
 
 
 def preprocess_image(path):
