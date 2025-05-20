@@ -1,8 +1,19 @@
 # Traffic-Sign-Classification
-Trained a deep convolutional neural network using TensorFlow to accurately classify 43 types of traffic signs with over 97% accuracy, using the GTRSB dataset containing over 50,000 labelled images.
+
+A deep convolutional neural network (CNN) built with TensorFlow to classify 43 types of traffic signs from the GTSRB dataset (50,000+ images). This model achieves over 97% accuracy and includes a Flask web interface for real-time image upload and prediction.
+
+## Technologies Used
+
+* Python
+* TensorFlow
+* Flask
+* NumPy
+* OpenCV
+* HTML/CSS
+
 
 To download dependencies: pip3 install -r requirements.txt
 
-Run program: python3 traffic.py gtrsb
+To train model: python3 traffic.py gtrsb
 
-Run program, save trained model to a file: python3 traffic.py gtrsb [filename]
+Run flask web server: python3 app.py
